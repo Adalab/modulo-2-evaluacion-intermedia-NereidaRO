@@ -12,19 +12,26 @@
 body{
     font-family: var(--font-family);
     color: var(--letter-color);
+    background-color: rgb(246, 246, 246);
 } /*Común a todo*/
 
 .header__title{
     font-size: 2rem;
     font-weight: 600;
     margin: 3%;
+    
 }
 
 .main{
+    height: 100vh;
     display: flex;
     flex-direction: column;
     margin: 3%;
-}
+    background-image: url(./akinator.png);
+    background-color: rgb(246, 246, 246);
+    background-position: 0px 180px;
+    background-repeat:no-repeat;
+} /*Es que es un juego parecido a Akinator*/
 
 .main__wrapper{
     display: flex;
