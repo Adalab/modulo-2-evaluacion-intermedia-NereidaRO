@@ -8,8 +8,18 @@
     <link rel="stylesheet" href="./main.css">
 </head>
 <body>
-    <header></header>
-    <main></main>
+    <header>
+        <h1 class="header__title">Adivina el número</h1>
+    </header>
+    <main>
+        <form class="main__wrapper">
+            <label for="your-number">Introduce aquí tu número:</label>
+            <input class="main__number js-your-number" type="text" id="your-number">
+            <input class="main__button js-button" type="submit" value="Prueba">
+        </form>
+        <p class="main__clue js-clue">Pista: escribe el número y dale a Prueba</p>
+        <p class="main__tries js-tries">Número de intentos: 0</p>
+    </main>
     <script type="text/javascript" src="./main.js"></script>
 </body>
 </html>
