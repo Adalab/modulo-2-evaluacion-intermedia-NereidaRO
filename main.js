@@ -21,6 +21,7 @@ function counterTries() {
     return count;
 };
 
+
 function handleClick(event) {
     event.preventDefault();
     const yourNumber = inputNumber.value;
