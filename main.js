@@ -14,6 +14,13 @@ function getRandomNumber(max) {
 const numberPC = getRandomNumber(100);
 console.log(numberPC); //el número carga al inicio, no cuando la usuaria clique
 
+let count = 0; //si está dentro, empieza desde 0 siempre
+
+function counterTries() {
+    count = count + 1;
+    return count;
+};
+
 function handleClick(event) {
     event.preventDefault();
     const yourNumber = inputNumber.value;
@@ -26,6 +33,8 @@ function handleClick(event) {
     } else if (parseInt(yourNumber) > 100) {
         clueParagraph.innerHTML = `El número debe estar entre 1 y 100`;
     };
+    const triesCount = counterTries();
+    triesParagraph.innerHTML = `Número de intentos: ${triesCount}`;
 };
 
 button.addEventListener('click', handleClick);
