@@ -20,21 +20,24 @@ function counterTries() {
     count = count + 1;
     return count;
 };
+function renderClue (text) {
+    clueParagraph.innerHTML = `${text}`;
+};
 
 
 function handleClick(event) {
     event.preventDefault();
     const yourNumber = inputNumber.value;
     if(parseInt(yourNumber) === numberPC){
-        clueParagraph.innerHTML = `¡Has ganado, campeona!`;
+        renderClue(`¡Has ganado, campeona!`);
     } else if (parseInt(yourNumber) > numberPC && parseInt(yourNumber) < 100) {
-        clueParagraph.innerHTML = `Demasiado alto`;
+        renderClue(`Demasiado alto`);
     } else if (parseInt(yourNumber) < numberPC && parseInt(yourNumber) >=1) {
-        clueParagraph.innerHTML = `Demasiado bajo`;
+        renderClue(`Demasiado bajo`);
     } else if (parseInt(yourNumber) > 100 || parseInt(yourNumber) < 1) {
-        clueParagraph.innerHTML = `El número debe estar entre 1 y 100`;
+        renderClue(`El número debe estar entre 1 y 100`);
     } else if (yourNumber !== parseInt(yourNumber)) {
-        clueParagraph.innerHTML = `¡Debes escribir un número!`
+        renderClue(`¡Debes escribir un número!`);
     };
     const triesCount = counterTries();
     triesParagraph.innerHTML = `Número de intentos: ${triesCount}`;
