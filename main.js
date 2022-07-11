@@ -16,7 +16,7 @@ console.log(`Mi número aleatorio es ${numberPC}`); //el número carga al inicio
 
 let count = 0; //si está dentro, empieza desde 0 siempre
 
-function counterTries() {
+function countTries() {
     count = count + 1;
     return count;
 };
@@ -39,7 +39,7 @@ function handleClick(event) {
     } else if (yourNumber !== parseInt(yourNumber)) {
         renderClue(`¡Debes escribir un número!`);
     };
-    const triesCount = counterTries();
+    const triesCount = countTries();
     triesParagraph.innerHTML = `Número de intentos: ${triesCount}`;
 };
 
