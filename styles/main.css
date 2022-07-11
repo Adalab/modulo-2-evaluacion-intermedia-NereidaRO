@@ -27,7 +27,7 @@ body{
     display: flex;
     flex-direction: column;
     margin: 3%;
-    background-image: url(./akinator.png);
+    background-image: url(../akinator.png);
     background-color: rgb(246, 246, 246);
     background-position: 0px 180px;
     background-repeat:no-repeat;
