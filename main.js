@@ -29,10 +29,12 @@ function handleClick(event) {
         clueParagraph.innerHTML = `¡Has ganado, campeona!`;
     } else if (parseInt(yourNumber) > numberPC && parseInt(yourNumber) < 100) {
         clueParagraph.innerHTML = `Demasiado alto`;
-    } else if (parseInt(yourNumber) < numberPC) {
+    } else if (parseInt(yourNumber) < numberPC && parseInt(yourNumber) >=1) {
         clueParagraph.innerHTML = `Demasiado bajo`;
-    } else if (parseInt(yourNumber) > 100) {
+    } else if (parseInt(yourNumber) > 100 || parseInt(yourNumber) < 1) {
         clueParagraph.innerHTML = `El número debe estar entre 1 y 100`;
+    } else if (yourNumber !== parseInt(yourNumber)) {
+        clueParagraph.innerHTML = `¡Debes escribir un número!`
     };
     const triesCount = counterTries();
     triesParagraph.innerHTML = `Número de intentos: ${triesCount}`;
