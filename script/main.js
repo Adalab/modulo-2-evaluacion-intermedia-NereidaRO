@@ -6,17 +6,15 @@ const inputNumber = document.querySelector('.js-your-number');
 const button = document.querySelector('.js-button');
 const clueParagraph = document.querySelector('.js-clue');
 const triesParagraph = document.querySelector('.js-tries');
+let count = 0; //si está dentro, empieza desde 0 siempre
+const numberPC = getRandomNumber(100);
+console.log(`Mi número aleatorio es ${numberPC}`); //el número carga al inicio, no cuando la usuaria clique
 
 //Funciones
 
 function getRandomNumber(max) {
     return Math.ceil(Math.random() * max);
 };
-
-const numberPC = getRandomNumber(100);
-console.log(`Mi número aleatorio es ${numberPC}`); //el número carga al inicio, no cuando la usuaria clique
-
-let count = 0; //si está dentro, empieza desde 0 siempre
 
 function countTries() {
     count = count + 1;
