@@ -7,6 +7,8 @@ const button = document.querySelector('.js-button');
 const clueParagraph = document.querySelector('.js-clue');
 const triesParagraph = document.querySelector('.js-tries');
 
+//Funciones
+
 function getRandomNumber(max) {
     return Math.ceil(Math.random() * max);
 };
@@ -24,10 +26,12 @@ function renderClue (text) {
     clueParagraph.innerHTML = `${text}`;
 };
 
+function renderCount () {
+    const triesCount = countTries();
+    triesParagraph.innerHTML = `Número de intentos: ${triesCount}`;
+};
 
-function handleClick(event) {
-    event.preventDefault();
-    const yourNumber = inputNumber.value;
+function compareNumber (yourNumber){
     if(parseInt(yourNumber) === numberPC){
         renderClue(`¡Has ganado, campeona!`);
     } else if (parseInt(yourNumber) > numberPC && parseInt(yourNumber) < 100) {
@@ -39,8 +43,15 @@ function handleClick(event) {
     } else if (yourNumber !== parseInt(yourNumber)) {
         renderClue(`¡Debes escribir un número!`);
     };
-    const triesCount = countTries();
-    triesParagraph.innerHTML = `Número de intentos: ${triesCount}`;
+};
+
+//Evento y manejadora
+
+function handleClick(event) {
+    event.preventDefault();
+    const yourNumber = inputNumber.value;
+    compareNumber (yourNumber);
+    renderCount ();
 };
 
 button.addEventListener('click', handleClick);
